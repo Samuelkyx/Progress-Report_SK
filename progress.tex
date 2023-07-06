@@ -1,0 +1,63 @@
+\begin{enumerate}
+    \item June 9
+    \begin{itemize}
+        \item Read through the standard prepayment modeling method, and have a high-level idea.
+    \end{itemize}
+    \item June 12
+    \begin{itemize}
+        \item When people aggregated these loans, to generate polls of loans. How are pools generated? Not sure they aggregated by asset type? (ie. asset base on - equipment loan? real estate loan? car loan？ or mix it all together) Investigated through the SBA website, to find out how the pools were generated.
+    \end{itemize}
+    
+    \begin{itemize}
+        \item The SBA website indicates The loan pool together by 1. the floating rate they are referring 2. the level of the spread that is below/above the floating rate for example, prime rate + 30/60 bp. One of the characteristics for pooling is the range of the spread (prime + spread in between 30-60 bp), then we can calculate the weighted average coupon. \newline 
+        Base Rate and Adjustment: For variable rate pools, each underlying Loan must use the same base rate, either the Wall Street Journal Prime Rate, the LIBOR Base Rate2, or the SBA Optional Peg Rate, and float on the same accrual basis, either monthly or calendar quarterly
+    \end{itemize}
+
+    \begin{itemize}
+
+       \item Need to be done: to find if there is a clear indication of the type of underlying loans. investigated from the loan assemblers' side (they will take on SBA loans and make them into pools and securitize them and sell to investors), for example, BMO, FHN 
+    \end{itemize}
+    
+    \item June 20
+    \begin{itemize}
+        \item Go through sample83164lZJ3.xlsx, understand the CPR (Conditional Prepayment Rate)
+        \item Build model for 1. define the prepayment speed 2. rank the speed 3. build initial logistics regression for fast/slow(1,0) speed 
+        \item Identifying key factors that impact prepayment speed is crucial as they can have a significant influence on the outcome, based be default modeling prepayment literature.
+    \end{itemize}
+    
+    \item June 29
+    \begin{itemize}
+        \item Go through Bloomberg data from the sample ticker screenshot and discuss which variables are useful for our model intuitively.
+        
+        \begin{itemize}
+            \item Liquidity Score (BVAC score) 
+            \item Yield 
+            \item Life of the loan (Vintage) 
+            \item Maturity data
+            \item Original loan amount 
+            \item Current loan amount 
+            \item Original numbers of the loan
+            \item Current numbers of the loan
+        \end{itemize}
+        
+    \end{itemize}
+    
+    \item July 6
+    \begin{itemize}
+        \item Once get the data pulled from Bloomberg, general steps for the regression to model the prepayment part:
+        
+        \begin{enumerate}
+            \item Variable Selection. Selection from both statistical analysis and intuition/economic considerations. We will begin by the raw statistics to find variables that show statistical significance. Once we have these variables, we will explore their economic implications and assess whether they align with our intuition through economic research.
+            \item Model Specification. Linear regression with multiple variables? non-linear term? the auto regressive term? error-correcting term? (Analyze from statistical analysis and intuition/economic considerations)
+            \item Testing to make sure the model is sound. We could use FHN/ Bloomberg projection as the benchmark to assess our model's accuracy/sound.
+        \end{enumerate}
+
+        
+        \item Need to be done: 1. seeking some more variables to add to our model whether for the classification part or regression part.
+        For example GDP, HPI, CPI
+        \newline
+
+        
+    \end{itemize}
+
+\end{enumerate}
